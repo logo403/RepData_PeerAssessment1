@@ -45,15 +45,6 @@ hist(sumstepday$steps,
 
 ![](PA1_template_files/figure-html/unnamed-chunk-4-1.png) 
 
-```r
-# To print the histogram in the figure folder
-png(file="./figure/hist_raw.png")
-hist(sumstepday$steps, 
-     main = "Total number of steps taken each day",
-     xlab = "Total daily steps")
-dev.off()
-```
-
 
 2. Calculate and report the mean and median total number of steps taken per day
 
@@ -77,16 +68,7 @@ plot(meanstepinter,type="l",
      xlab = "5-minute interval", ylab = "Average number of steps")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-7-1.png) 
-
-```r
-# To print the time series in the figure folder
-png(file="./figure/time_series.png")
-plot(meanstepinter,type="l", 
-     main = "Daily average steps taken per 5-minute interval",
-     xlab = "5-minute interval", ylab = "Average number of steps")
-dev.off()
-```
+![](PA1_template_files/figure-html/unnamed-chunk-6-1.png) 
 
 
 2. Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
@@ -147,16 +129,7 @@ hist(sumstepday_new$steps,
      xlab = "Total daily steps")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-13-1.png) 
-
-```r
-# To print the histogram with imputation in the figure folder
-png(file="./figure/hist_impute.png")
-hist(sumstepday_new$steps, 
-     main = "New total number of steps taken each day",
-     xlab = "Total daily steps")
-dev.off()
-```
+![](PA1_template_files/figure-html/unnamed-chunk-11-1.png) 
 
 5. Calculate and report the mean and median total number of steps taken per day.
 
@@ -201,12 +174,4 @@ xyplot(steps ~ interval | wdfact, data=aggweekday, type="l",
        layout= c(1,2), xlab = "Interval", ylab = "Number of steps")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-18-1.png) 
-
-```r
-# To print the panel weekend vs weekday in the figure folder
-png(file="./figure/panel.png")
-xyplot(steps ~ interval | wdfact, data=aggweekday, type="l", 
-       layout= c(1,2), xlab = "Interval", ylab = "Number of steps")
-dev.off()
-```
+![](PA1_template_files/figure-html/unnamed-chunk-15-1.png) 

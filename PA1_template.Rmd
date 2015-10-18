@@ -43,15 +43,6 @@ hist(sumstepday$steps,
      main = "Total number of steps taken each day",
      xlab = "Total daily steps")
 ```
-```{r, echo=TRUE,results='hide'}
-# To print the histogram in the figure folder
-png(file="./figure/hist_raw.png")
-hist(sumstepday$steps, 
-     main = "Total number of steps taken each day",
-     xlab = "Total daily steps")
-dev.off()
-
-```
 
 
 2. Calculate and report the mean and median total number of steps taken per day
@@ -72,15 +63,6 @@ meanstepinter <- aggregate(steps ~ interval, data = activity, FUN = mean)
 plot(meanstepinter,type="l", 
      main = "Daily average steps taken per 5-minute interval",
      xlab = "5-minute interval", ylab = "Average number of steps")
-```
-```{r, echo=TRUE,results='hide'}
-# To print the time series in the figure folder
-png(file="./figure/time_series.png")
-plot(meanstepinter,type="l", 
-     main = "Daily average steps taken per 5-minute interval",
-     xlab = "5-minute interval", ylab = "Average number of steps")
-dev.off()
-
 ```
 
 
@@ -142,15 +124,6 @@ hist(sumstepday_new$steps,
      xlab = "Total daily steps")
 
 ```
-```{r, echo=TRUE,results='hide'}
-# To print the histogram with imputation in the figure folder
-png(file="./figure/hist_impute.png")
-hist(sumstepday_new$steps, 
-     main = "New total number of steps taken each day",
-     xlab = "Total daily steps")
-dev.off()
-
-```
 
 5. Calculate and report the mean and median total number of steps taken per day.
 ```{r, echo = TRUE}
@@ -189,13 +162,5 @@ aggweekday <- aggregate(steps ~ interval + wdfact, data = newfactor, FUN=mean)
 # Plot the data
 xyplot(steps ~ interval | wdfact, data=aggweekday, type="l", 
        layout= c(1,2), xlab = "Interval", ylab = "Number of steps")
-
-```
-```{r, echo=TRUE,results='hide'}
-# To print the panel weekend vs weekday in the figure folder
-png(file="./figure/panel.png")
-xyplot(steps ~ interval | wdfact, data=aggweekday, type="l", 
-       layout= c(1,2), xlab = "Interval", ylab = "Number of steps")
-dev.off()
 
 ```
